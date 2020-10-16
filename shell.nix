@@ -1,12 +1,12 @@
 { avr ? true, arm ? true, teensy ? true }:
 
 let
-  nixpkgs = builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/903266491b7b9b0379e88709feca0af900def0d9.tar.gz";
-    sha256 = "1b5wjrfgyha6s15k1yjyx41hvrpmd5szpkpkxk6l5hyrfqsr8wip";
-  };
+  #nixpkgs = builtins.fetchTarball {
+  #  url = "https://github.com/NixOS/nixpkgs/archive/903266491b7b9b0379e88709feca0af900def0d9.tar.gz";
+  #  sha256 = "1b5wjrfgyha6s15k1yjyx41hvrpmd5szpkpkxk6l5hyrfqsr8wip";
+  #};
 
-  pkgs = import nixpkgs { };
+  pkgs = import <nixpkgs>{ };
 
   hjson = with pkgs.python3Packages; buildPythonPackage rec {
     pname = "hjson";
